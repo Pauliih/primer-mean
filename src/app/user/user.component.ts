@@ -33,4 +33,9 @@ export class UserComponent implements OnInit {
   create(user: User) {
     this.users.push(user);
   }
+
+  destroy(user: User) {
+    const i = this.users.indexOf(user);
+    this.users.splice(i, 1);
+  }
 }
