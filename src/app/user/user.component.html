@@ -1,2 +1,4 @@
 <h1>User Main Component</h1>
 <pre>{{users | json}}</pre>
+
+<app-user-new (createNewUserEvent)="create($event)"></app-user-new>
