@@ -1,3 +1,29 @@
-<p>
-  user-list works!
-</p>
+<div class="container-fluid">
+
+    <h3>User List Component</h3>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Update</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of users">
+                <tr>
+                    <th scope="row">{{user._id}}</th>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td><button type="button" class="btn btn-primary">Delete</button></td>
+                    <td><button type="button" class="btn btn-primary">Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
