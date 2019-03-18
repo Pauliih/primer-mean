@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserService } from './user.service';
 import { User } from './user';
 
@@ -37,5 +38,10 @@ export class UserComponent implements OnInit {
   destroy(user: User) {
     const i = this.users.indexOf(user);
     this.users.splice(i, 1);
+  }
+
+  update(users) {
+    const i = this.users.indexOf(users.original);
+    this.users[i] = users.edited;
   }
 }

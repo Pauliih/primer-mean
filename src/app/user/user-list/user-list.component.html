@@ -20,9 +20,10 @@
                     <td>{{user.first_name}}</td>
                     <td>{{user.last_name}}</td>
                     <td>{{user.email}}</td>
-                    <td><button type="button" class="btn btn-primary" (click)="destroy(user)">Delete</button></td>
-                    <td><button type="button" class="btn btn-primary">Update</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="destroy(user)">Delete</button></td>
+                    <td><button type="button" class="btn btn-primary" (click)="user.editable=!user.editable">Update</button></td>
                 </tr>
+                <app-user-edit *ngIf="user.editable" [user]="user" (updateUserEvent)="update($event)"></app-user-edit>
             </tbody>
         </table>
     </div>
